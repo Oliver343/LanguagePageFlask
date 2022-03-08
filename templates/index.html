@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Learn English</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <img src="/static/Ollies_English.png">
+        <br>
+        <p>What does this phrasal verb mean: <b>{{ pass_question }}</b></p>
+        <p>Example sentence: <b><i>{{ pass_sentence }}</i></b></p>
+        <form action="/" method="post">
+        <br>
+        <input type="radio" id="radio_1id" name="radio_1" value="1">
+        <label for="radio_1">{{ pass_answer1 }}</label>
+        </input>
+        <br>
+        <input type="radio" id="radio_1id" name="radio_1" value="2">
+        <label for="radio_1">{{ pass_answer2 }}</label>
+        </input>
+        <br>
+        <input type="radio" id="radio_1id" name="radio_1" value="3">
+        <label for="radio_1">{{ pass_answer3 }}</label>
+        </input>
+        <br>
+        <input type="submit" value="Submit" id="submit">
+        <br>
+        {% for message in get_flashed_messages()%}
+        <p> {{message}} </p>
+        {% endfor %}
+
+        
+        </form>
+    </body>
+</html>
