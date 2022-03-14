@@ -5,15 +5,16 @@ import random
 with open('questions_data.json') as f:
     questions = json.load(f)
     print("Loaded json data is: {}".format(questions))
-    # Retrieving data from json file
+    # Retrieving data from json file `questions_data.json`
 
-carried_over = 0
+carried_over = 0  # This is where the correct answer is stored so it can be checked even any the page is refreshed.
 
 app = Flask(__name__)
 app.secret_key = "sausage123" # Not used
 
 @app.route('/', methods=["POST", "GET"])
 def index():
+    """ Runs when the main page is loaded. Generates random questions and answers. Relies on global variable nammed `carried_over` """
     global carried_over
     question_number = random.randrange(len(questions))
     wrong_answer1 = question_number
