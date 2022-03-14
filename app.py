@@ -20,6 +20,7 @@ def index():
     wrong_answer1 = question_number
     wrong_answer2 = question_number
     wrong_answer3 = question_number
+    # Wrong answers are given the same number as the question in order to trigger the while loop seen later.
     correct_radio_button = random.randrange(0,3)
     print("Correct answer is: ", correct_radio_button)
     # The random numbers have to be generated here each time the page is loaded so they are different each time.
